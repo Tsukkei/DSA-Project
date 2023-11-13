@@ -6,18 +6,16 @@ public class App {
         ArrayList<String> songList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        // Initialize the list with some default songs
-        songList.add("Lihim by Arthur Miguel" );
-        songList.add("Standing next to you by JK (BTS)" );
-        songList.add("Unang Sayaw by Nobita" );
-        songList.add("Mercy by Shawn Mendez" );
-        songList.add("Fleeting Lullaby by Ado" );
-        songList.add("Gusto feat.Al James by Zack Tabudlo, Al James");
-        songList.add("Who by Lauv, BTS" );
-        songList.add("Future Perfect by ENHYPEN" );
-        songList.add("Pasilyo by Sunkissed Lola" );
-        songList.add("Raining in Manila by Lola Amour" );
-        // ... Add more songs
+        // Input all songs from the user
+        System.out.println("Enter your favorite songs (type 'done' when finished):");
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+            songList.add(input);
+        }
+
         while (true) {
             System.out.println("Current Playlist:");
             System.out.println("   ");
@@ -29,7 +27,7 @@ public class App {
 
             System.out.println("Options:");
             System.out.println("   ");
-            System.out.println("1. Add a favorite song");
+            System.out.println("1. Add a New song");
             System.out.println("2. Remove a song");
             System.out.println("3. Replace a song");
             System.out.println("4. Exit");
@@ -41,7 +39,7 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter the name of your favorite song: ");
+                    System.out.print("Enter the name of the song: ");
                     String favoriteSong = scanner.nextLine();
                     songList.add(favoriteSong);
                     break;
